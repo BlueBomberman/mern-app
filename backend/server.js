@@ -16,6 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 
 //modularize routes
 app.use("/api/goals", require("./routes/goalRoutes"));
+app.use("/api/users", require("./routes/userRoutes"));
 
 //ovverride the default err handler
 app.use(errorHandler);
