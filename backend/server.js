@@ -1,7 +1,12 @@
 const express = require("express");
+const colors = require("colors");
 const dotenv = require("dotenv").config();
 const { errorHandler } = require("./middleware/errorMiddleware");
 const port = process.env.PORT || 5000;
+const connectDB = require("./config/db");
+
+connectDB(); //if it fails it's usually because you forgot something in the mongo uri
+//or you messed up the db access (didn't put your ip access/access to everyone)
 
 const app = express();
 
