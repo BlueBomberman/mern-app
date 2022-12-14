@@ -10,11 +10,11 @@ connectDB(); //if it fails it's usually because you forgot something in the mong
 
 const app = express();
 
-//add middleware
+//add middleware -> to pass body
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-//modularize routes
+//modularize routes - the second argument imports the routes
 app.use("/api/goals", require("./routes/goalRoutes"));
 app.use("/api/users", require("./routes/userRoutes"));
 

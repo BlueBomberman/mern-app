@@ -36,7 +36,7 @@ const updateGoal = asyncHandler(async (req, res) => {
 
   const user = await User.findById(req.user.id);
   if(!user){
-    res.status(401) //not auth
+    res.status(401) //not authorized
     throw new Error('User not found');
   }
 
