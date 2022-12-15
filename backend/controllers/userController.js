@@ -77,13 +77,7 @@ const loginUser = asyncHandler(async (req, res) => {
 //@access   Private, example on how to protect a route
 const getMe = asyncHandler(async (req, res) => {
   //we have req.user because of the protect middleware
-  const { _id, name, email } = await User.findById(req.user.id);
-
-  res.status(200).json({
-    id: _id,
-    name,
-    email,
-  });
+  res.status(200).json(req.user);
 });
 
 //Generate JWT
